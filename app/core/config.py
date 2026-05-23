@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     app_name: str = Field(default="rag_backend", validation_alias="APP_NAME")
     environment: str = Field(default="local", validation_alias="ENVIRONMENT")
     log_level: str = Field(default="INFO", validation_alias="LOG_LEVEL")
+    qdrant_api_key: str = Field(default="", validation_alias="QDRANT_API_KEY")
 
     database_url: str = Field(
         default="postgresql+asyncpg://raguser:ragpassword@localhost:5432/rag_db",

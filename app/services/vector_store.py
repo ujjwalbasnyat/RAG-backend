@@ -19,7 +19,7 @@ from app.core.logging import logger
 
 _settings = get_settings()
 
-_client = AsyncQdrantClient(url=_settings.qdrant_url)
+_client = AsyncQdrantClient(url=_settings.qdrant_url, api_key=_settings.qdrant_api_key or None)
 _reranker = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
 
 VECTOR_DIM = _settings.embedding_dim
