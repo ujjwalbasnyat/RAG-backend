@@ -151,16 +151,16 @@ async def search_and_rerank(
     if not results:
         return []
 
-    # pairs = [[query, r.payload["text"]] for r in results]
-    # rerank_scores: list[float] = _reranker.predict(pairs).tolist()
+    pairs = [[query, r.payload["text"]] for r in results]
+    rerank_scores: list[float] = _reranker.predict(pairs).tolist()
 
-    # scored = sorted(
-    #     zip(results, rerank_scores),
-    #     key=lambda x: x[1],
-    #     reverse=True,
-    # )[:top_k_rerank]
+    scored = sorted(
+        zip(results, rerank_scores),
+        key=lambda x: x[1],
+        reverse=True,
+    )[:top_k_rerank]
 
-    scored = [(r, r.score) for r in sorted(results, key=lambda x: x.score, reverse=True)[:top_k_rerank]]
+    # scored = [(r, r.score) for r in sorted(results, key=lambda x: x.score, reverse=True)[:top_k_rerank]]
 
 
     seen: set[str] = set()
