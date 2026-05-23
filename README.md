@@ -111,6 +111,7 @@ Common Settings
 - `DATABASE_URL`: PostgreSQL DSN for async SQLAlchemy.
 - `REDIS_URL`: Redis DSN for chat memory and booking state.
 - `QDRANT_URL`: Qdrant base URL.
+- `QDRANT_API_KEY`: Qdrant API key (if authentication is enabled).
 - `QDRANT_COLLECTION`: collection name for stored vectors.
 - `GROQ_CHAT_MODEL`: Groq model name. Default: `llama-3.1-70b-versatile`.
 - `EMBEDDING_MODEL_NAME`: sentence-transformers model name.
